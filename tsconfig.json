@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  }
+    "target": "ES6",                          // Целевая версия JavaScript
+    "module": "commonjs",                     // Модульная система
+    "strict": true,                           // Включение всех строгих проверок
+    "esModuleInterop": true,                  // Включение интероперабельности с ES модулями
+    "skipLibCheck": true,                     // Пропуск проверки типов библиотек
+    "outDir": "./dist",                       // Директория для скомпилированных файлов
+    "rootDir": "./src",                       // Корневая директория для исходных файлов
+    "resolveJsonModule": true,                // Разрешение импорта JSON файлов
+    "experimentalDecorators": true,           // Включение экспериментальной поддержки декораторов
+    "emitDecoratorMetadata": true,            // Включение эмиссии метаданных для декораторов
+    "typeRoots": ["./node_modules/@types"],   // Пути для типов
+    "lib": ["ES6", "DOM"],                     // Библиотеки, которые будут включены
+    "strictPropertyInitialization": false
+  },
+  "include": ["src/**/*.ts"],                 // Включение всех .ts файлов в src
+  "exclude": ["node_modules", "**/*.spec.ts"] // Исключение node_modules и тестов
 }
