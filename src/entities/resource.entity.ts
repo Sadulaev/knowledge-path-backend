@@ -1,5 +1,6 @@
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 import { StudyObject } from "./studyObject.entity";
+import { Tag } from "./tag.entity";
 
 @Entity({ name: 'resource' })
 export class Resource {
@@ -14,6 +15,12 @@ export class Resource {
 
     @Column({ name: 'author' })
     author: string;
+
+    @Column({ name: 'release_year' })
+    releaseYear: string;
+
+    @ManyToMany(() => Tag, (tag) => tag.resources)
+    tags: Tag[];
 
     @Column({ name: 'type' })
     type: string;

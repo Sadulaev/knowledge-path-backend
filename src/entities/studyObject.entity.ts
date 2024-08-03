@@ -1,7 +1,9 @@
-import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./user.entity";
 import { StudyObjectsOfUser } from "./studyObjectsOfUser";
 import { Resource } from "./resource.entity";
+import { Event } from "./event.entity";
+import { Tag } from "./tag.entity";
 
 @Entity({ name: 'study_object' })
 export class StudyObject {
@@ -23,9 +25,15 @@ export class StudyObject {
     @Column({ name: 'is_public' })
     isPublic: boolean;
 
+    @ManyToMany(() => Tag, (tag) => tag.studyObjects)
+    tags: Tag[];
+
     @ManyToMany(() => StudyObjectsOfUser, (studyingUsers) => studyingUsers.objectId)
-    studyingUser: StudyObjectsOfUser[];
+    studyingUsers: StudyObjectsOfUser[];
 
     @ManyToMany(() => Resource, (resource) => resource.studyObjects)
     resources: Resource[];
+
+    @OneToMany(() => Event, (event) => event.studyObject)
+    events: Event[]
 }

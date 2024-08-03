@@ -1,6 +1,8 @@
 import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { StudyObject } from "./studyObject.entity";
 import { StudyObjectsOfUser } from "./studyObjectsOfUser";
+import { Event } from "./event.entity";
+import { Task } from "./task";
 
 @Entity({ name: 'user' })
 export class User {
@@ -27,4 +29,10 @@ export class User {
 
     @ManyToMany(() => StudyObjectsOfUser, (studyingObject) => studyingObject.userId)
     studyingObjects: StudyObjectsOfUser[];
+
+    @OneToMany(() => Event, (event) => event.user)
+    events: Event[];
+
+    @OneToMany(() => Task, (task) => task.user)
+    tasks: Task[];
 }

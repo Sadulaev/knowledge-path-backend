@@ -7,12 +7,12 @@ export class StudyObjectsOfUser {
     @ManyToMany(() => User, (user) => user.studyingObjects)
     userId: User;
 
-    @ManyToMany(() => StudyObject, (object) => object.studyingUser)
+    @ManyToMany(() => StudyObject, (object) => object.studyingUsers)
     objectId: StudyObject;
 
     @Column({ name: 'start_date' })
     startDate: string;
 
     @Column({ name: 'end_date' })
-    endDate: string
+    updateDate: string
 }
