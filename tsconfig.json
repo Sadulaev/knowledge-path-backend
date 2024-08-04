@@ -12,7 +12,11 @@
     "emitDecoratorMetadata": true,            // Включение эмиссии метаданных для декораторов
     "typeRoots": ["./node_modules/@types"],   // Пути для типов
     "lib": ["ES6", "DOM"],                     // Библиотеки, которые будут включены
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["@types/*"]
+    }
   },
   "include": ["src/**/*.ts"],                 // Включение всех .ts файлов в src
   "exclude": ["node_modules", "**/*.spec.ts"] // Исключение node_modules и тестов

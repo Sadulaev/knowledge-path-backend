@@ -7,4 +7,10 @@ export class AuthData {
 
     @Column({ name: 'token' })
     token: string;
+
+    @Column({ name: 'device' })
+    device: string;
+
+    @Column({ name: 'ip' })
+    ip: string;
 }
