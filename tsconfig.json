@@ -15,7 +15,7 @@
     "strictPropertyInitialization": false,
     "baseUrl": "./",
     "paths": {
-      "*": ["@types/*"]
+      "*": ["@types/*", "src/*"]
     }
   },
   "include": ["src/**/*.ts"],                 // Включение всех .ts файлов в src

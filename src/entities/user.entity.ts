@@ -4,7 +4,7 @@ import { StudyObjectsOfUser } from "./studyObjectsOfUser";
 import { Event } from "./event.entity";
 import { Task } from "./task";
 
-@Entity({ name: 'user' })
+@Entity({ name: 'users' })
 export class User {
     @PrimaryGeneratedColumn()
     id: number;

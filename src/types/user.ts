@@ -4,7 +4,7 @@ export type UserSignUpType = {
     password: string;
 }
 
-export type UserSessionData = {
+export type UserSessionDataType = {
     device: string;
     ip: string;
 }

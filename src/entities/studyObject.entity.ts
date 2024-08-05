@@ -16,8 +16,8 @@ export class StudyObject {
     @Column({ name: 'title' })
     title: string;
 
-    @Column({ name: 'description', nullable: true })
-    description: string | null;
+    @Column({ name: 'description' })
+    description: string;
 
     @Column({ name: 'study_blocks_count' })
     studyBlocksCount: number;

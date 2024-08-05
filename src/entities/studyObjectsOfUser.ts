@@ -1,9 +1,12 @@
-import { Column, Entity, ManyToMany } from "typeorm";
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./user.entity";
 import { StudyObject } from "./studyObject.entity";
 
 @Entity({ name: 'study_objects_of_user' })
 export class StudyObjectsOfUser {
+    @PrimaryGeneratedColumn()
+    id: number;
+
     @ManyToMany(() => User, (user) => user.studyingObjects)
     userId: User;
 

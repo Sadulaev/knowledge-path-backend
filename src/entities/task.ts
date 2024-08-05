@@ -12,8 +12,8 @@ export class Task {
     @Column({ name: 'is_done', type: 'bool' })
     isDone: boolean;
 
-    @Column({ name: 'mistake_ids', type: 'array' })
-    mistakeIds: number[];
+    @Column({ name: 'mistake_ids', type: 'jsonb' })
+    mistakeIds: string;
 
     @ManyToOne(() => User, (user) => user.tasks)
     user: User;
